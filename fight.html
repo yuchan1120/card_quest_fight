@@ -1,0 +1,29 @@
+<script>
+  const deck = ["ストライク", "ストライク", "ストライク", "ストライク", "ストライク", "防御", "防御", "防御", "防御", "防御", "強打"];
+
+  function draw() {
+    const copy = deck.slice();
+    const selected = [...Array(5)].map(() => copy.splice(Math.floor(Math.random() * copy.length), 1)[0]);
+    let card_in_hand_0 = document.getElementById("card_in_hand_0");
+    let card_in_hand_1 = document.getElementById("card_in_hand_1");
+    let card_in_hand_2 = document.getElementById("card_in_hand_2");
+    let card_in_hand_3 = document.getElementById("card_in_hand_3");
+    let card_in_hand_4 = document.getElementById("card_in_hand_4");
+    card_in_hand_0.textContent = selected[0];
+    card_in_hand_1.textContent = selected[1];
+    card_in_hand_2.textContent = selected[2];
+    card_in_hand_3.textContent = selected[3];
+    card_in_hand_4.textContent = selected[4];
+  }
+</script>
+
+あなたの手札は
+<ul>
+  <li id="card_in_hand_0"></li>
+  <li id="card_in_hand_1"></li>
+  <li id="card_in_hand_2"></li>
+  <li id="card_in_hand_3"></li>
+  <li id="card_in_hand_4"></li>
+</ul>
+
+<input type="button" value="ターン終了" onclick="draw()">
